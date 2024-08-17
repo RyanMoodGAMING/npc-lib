@@ -22,13 +22,7 @@
  * THE SOFTWARE.
  */
 
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 dependencies {
   compileOnly(libs.gson)
   implementation(libs.geantyref)
-}
-
-tasks.withType<ShadowJar> {
-  relocate("io.leangen.geantyref", "com.github.juliarn.npclib.relocate.geantyref")
 }

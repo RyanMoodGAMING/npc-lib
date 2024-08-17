@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 dependencies {
   compileOnly(libs.gson)
 }

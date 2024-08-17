@@ -22,11 +22,9 @@
  * THE SOFTWARE.
  */
 
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 dependencies {
   api(projects.npcLibApi)
-  implementation(projects.npcLibCommon)
+  api(projects.npcLibCommon)
 
   implementation(libs.paperLib)
   implementation(libs.geantyref)
@@ -35,18 +33,4 @@ dependencies {
   compileOnly(libs.netty)
   compileOnly(libs.paper)
   compileOnly(libs.protocolLib)
-}
-
-tasks.withType<ShadowJar> {
-  dependsOn(":npc-lib-common:shadowJar")
-
-  relocate("net.kyori", "com.github.juliarn.npclib.relocate.net.kyori")
-  relocate("io.papermc.lib", "com.github.juliarn.npclib.relocate.paperlib")
-  relocate("io.leangen.geantyref", "com.github.juliarn.npclib.relocate.geantyref")
-  relocate("io.github.retrooper", "com.github.juliarn.npclib.relocate.io.packetevents")
-  relocate("com.github.retrooper", "com.github.juliarn.npclib.relocate.com.packetevents")
-
-  dependencies {
-    exclude("plugin.yml")
-  }
 }

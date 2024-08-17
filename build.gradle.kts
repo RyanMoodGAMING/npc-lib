@@ -23,12 +23,10 @@
  */
 
 import com.diffplug.gradle.spotless.SpotlessExtension
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
   alias(libs.plugins.spotless)
   alias(libs.plugins.nexusPublish)
-  alias(libs.plugins.shadow) apply false
 }
 
 defaultTasks("build", "shadowJar")
@@ -71,7 +69,6 @@ subprojects {
   apply(plugin = "java-library")
   apply(plugin = "maven-publish")
   apply(plugin = "com.diffplug.spotless")
-  apply(plugin = "io.github.goooler.shadow")
 
   dependencies {
     "compileOnly"(rootProject.libs.annotations)
@@ -85,15 +82,6 @@ subprojects {
   tasks.withType<Jar> {
     from(rootProject.file("license.txt"))
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
-  }
-
-  tasks.withType<ShadowJar> {
-    archiveClassifier.set(null as String?)
-    dependencies {
-      // excludes the META-INF directory, module infos & html files of all dependencies
-      // this includes for example maven lib files & multi-release module-json files
-      exclude("META-INF/**", "**/*.html", "module-info.*")
-    }
   }
 
   tasks.withType<JavaCompile>().configureEach {

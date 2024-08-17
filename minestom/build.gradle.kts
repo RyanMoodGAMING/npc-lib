@@ -22,11 +22,9 @@
  * THE SOFTWARE.
  */
 
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 dependencies {
   api(projects.npcLibApi)
-  implementation(projects.npcLibCommon)
+  api(projects.npcLibCommon)
 
   compileOnly(libs.minestom)
   implementation(libs.geantyref)
@@ -34,9 +32,4 @@ dependencies {
 
 tasks.withType<JavaCompile> {
   options.release.set(17)
-}
-
-tasks.withType<ShadowJar> {
-  dependsOn(":npc-lib-common:shadowJar")
-  relocate("io.leangen.geantyref", "com.github.juliarn.npclib.relocate.geantyref")
 }
