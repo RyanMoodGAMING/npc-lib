@@ -29,7 +29,7 @@ plugins {
   alias(libs.plugins.nexusPublish)
 }
 
-defaultTasks("build", "shadowJar")
+defaultTasks("clean", "build")
 
 allprojects {
   version = "3.0.0-SNAPSHOT"
