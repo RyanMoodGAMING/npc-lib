@@ -235,6 +235,11 @@ public class CommonNpc<W, P, I, E> extends CommonNpcFlaggedObject implements Npc
   }
 
   @Override
+  public @NotNull NpcSpecificOutboundPacket<W, P, I, E> rotate(float yaw, float pitch) {
+    return this.platform.packetFactory().createRotationPacket(yaw, pitch).toSpecific(this);
+  }
+
+  @Override
   public @NotNull NpcSpecificOutboundPacket<W, P, I, E> lookAt(@NotNull Position position) {
     double diffX = position.x() - this.pos.x();
     double diffY = position.y() - this.pos.y();

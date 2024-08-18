@@ -85,6 +85,8 @@ public interface Npc<W, P, I, E> extends NpcFlaggedObject {
 
   @NotNull Npc<W, P, I, E> stopTrackingPlayer(@NotNull P player);
 
+  @NotNull NpcSpecificOutboundPacket<W, P, I, E> rotate(float yaw, float pitch);
+
   @NotNull NpcSpecificOutboundPacket<W, P, I, E> lookAt(@NotNull Position position);
 
   @NotNull NpcSpecificOutboundPacket<W, P, I, E> playAnimation(@NotNull EntityAnimation animation);
