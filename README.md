@@ -24,7 +24,7 @@
 - **LabyMod Extension** (Sending Emotes & Sprays)
 - ...
 
-There are some **[images](#images)** down below shwocasing the use and features of this library.
+There are some **[images](#images)** down below showcasing the use and features of this library.
 
 ## Installation
 
@@ -129,7 +129,7 @@ BukkitPlatform.bukkitNpcPlatformBuilder()
   // Defaults to a platform-specific implementation.
   .taskManager()
   // the resolver to use for npc profiles. the resolver is given an unresolved
-  // version of a profile (for example only a uuid or name) and completes the
+  // version of a profile (for example only an uuid or name) and completes the
   // profile data (name, uuid, textures).
   // see BukkitProfileResolver for the available resolvers on bukkit (paper or spigot)
   // Defaults to a platform-specific implementation.
@@ -150,7 +150,7 @@ BukkitPlatform.bukkitNpcPlatformBuilder()
   // see MinestomVersionAccessor for the minestom implementation
   // Defaults to a platform-specific implementation.
   .versionAccessor()
-  // the factory for packets that need to be send in order to spawn and manage npcs.
+  // the factory for packets that need to be sent in order to spawn and manage npcs.
   // see BukkitProtocolAdapter for the available options on Bukkit (ProtocolLib or PacketEvents)
   // see MinestomProtocolAdapter for the minestom implementation
   // Defaults to a platform-specific implementation.
@@ -245,7 +245,7 @@ public final class AttackEventConsumer implements NpcEventConsumer<AttackNpcEven
   @Override
   public void handle(AttackNpcEvent event) {
     var badPlayer = event.player(); // player type is object as the type couldn't be inferred
-    Player goodPlayer = event.player(); // player type is Player but it must be known at compile time
+    Player goodPlayer = event.player(); // player type is Player, but it must be known at compile time
   }
 }
 ```
