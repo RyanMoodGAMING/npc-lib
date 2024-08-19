@@ -24,6 +24,8 @@
 - **LabyMod Extension** (Sending Emotes & Sprays)
 - ...
 
+There are some **[images](#images)** down below shwocasing the use and features of this library.
+
 ## Installation
 
 All modules are available in [maven central](https://central.sonatype.com/search?q=io.github.juliarn):
@@ -41,7 +43,6 @@ All modules are available in [maven central](https://central.sonatype.com/search
 Maven:
 
 ```xml
-
 <dependency>
   <groupId>io.github.juliarn</groupId>
   <artifactId>(module name from the list above)</artifactId>
