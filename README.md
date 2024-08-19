@@ -226,7 +226,9 @@ configuration from which a NPC was created.
 
 This library provides some events to catch when certain actions are executed. Note that all events shown below are not
 platform specific. Event listeners must be registered into the event manager provided by the platform and not, for
-example, into the bukkit event system:
+example, into the bukkit event system. Note that event listeners can be called from any thread, there is no guarantee
+that events happen on a specific thread (such as the main server thread). For example, if you need to access the Bukkit
+api, make sure that you manually execute the corresponding code on the main server thread.
 
 | Event Class Name  | Description                                                                                                                                       |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
