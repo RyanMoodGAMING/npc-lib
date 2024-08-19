@@ -534,6 +534,20 @@ public final class TestPlugin extends JavaPlugin {
 }
 ```
 
+#### Letting the NPC do a LabyMod emote
+Using the LabyMod extension module, packets can be constructed to make the players do LabyMod emotes and Sprays. Note
+that NPCs must be spawned with their second uuid half being zeroed to use this feature. The factory only supports
+LabyMod version 4 (neo). A detailed explanation of the mentioned limitation and a list of available emotes can be found
+in the [LabyMod Developer Documentation](https://dev.labymod.net/pages/server/labymod/features/emotes):
+
+```java
+public final class TestPlugin extends JavaPlugin {
+  public void playLabyModEmoteForPlayer(Npc<World, Player, ItemStack, Plugin> npc, Player player, int... emoteIds) {
+    LabyModExtension.createEmotePacket(npc.platform().packetFactory(), emoteIds).schedule(player, npc);
+  }
+}
+```
+
 ## Compiling from source
 
 Follow these steps to build and publish the library to your local maven repository:
